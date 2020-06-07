@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">GitKtDroid</string>
+    <string name="message_back_pressed">Press back again to exit</string>
+    <string name="message_error_loading">Error occurred</string>
+    <string name="hint_username_1">Your Username</string>
+    <string name="hint_username_2">Opponent\'s Username</string>
+    <string name="button_load_label">Load Players</string>
+    <string name="button_start_label">Start</string>
+    <string name="message_error_input">Invalid GitHub username</string>
+    <string name="message_result_won">%s won this match!</string>
+    <string name="message_result_tie">This match has been tied!</string>
+    <string name="text_zero">0</string>
+    <string name="message_duplicate_id">Both username should not same</string>
+    <string name="message_guide">Enter GitHub username and click \'Load Players\' button.\nOnce Players are loaded, click \'Start\' button</string>
+    <string name="text_play_git_battle">Play GitHub Battle</string>
+    <string name="text_top_repos">Top 100 Kotlin-Android Repositories</string>
+    <string name="text_info">Play GitHub Battle - Compare your profile with other developers on GitHub. This is just for fun. Enjoy!! ;) \n------\nSee top 100 repositories of #AndroidDev developed using Kotlin :)</string>
+    <string name="title_game_activity">GitHub Battle</string>
+    <string name="title_ktrepo_activity">Top KtDroid Repositories</string>
+    <string name="message_click_play">Click \'Start\' to play game!</string>
+</resources>

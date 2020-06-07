@@ -1,0 +1,113 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "dev.shreyaspatil.ktdroid"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding {
+            enabled = true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+
+    def coroutines_version = '1.3.7'
+    def appcompat_version = '1.1.0'
+    def core_ktx_version = '1.3.0'
+    def constraintlayout_version = '1.1.3'
+    def swiperefreshlayout_version = '1.0.0'
+    def recyclerview_version = "1.2.0-alpha03"
+    def lifecycle_version = '2.2.0'
+    def material_design_version = '1.1.0'
+    def lottieVersion = "3.4.0"
+    def retrofit_version = '2.8.1'
+    def coilkt_version = '0.9.5'
+    def moshi_version = '1.9.2'
+    def junit_version = '4.13'
+    def arch_testing = '2.1.0'
+    def okhttp_mock_version = '4.4.0'
+    def android_test_version = '1.2.0'
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    // Android
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.core:core-ktx:$core_ktx_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefreshlayout_version"
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+
+    // Lifecycle KTX
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
+
+    // Material Design
+    implementation "com.google.android.material:material:$material_design_version"
+
+    // Lottie
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    // Architecture Components
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+    // Coil-kt
+    implementation "io.coil-kt:coil:$coilkt_version"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+
+    // Moshi
+    implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+
+    // Testing
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "androidx.arch.core:core-testing:$arch_testing"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$okhttp_mock_version"
+    androidTestImplementation "androidx.test:runner:$android_test_version"
+    androidTestImplementation "androidx.test:rules:$android_test_version"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+}
